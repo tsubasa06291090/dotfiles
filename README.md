@@ -1,4 +1,9 @@
-# dotfiles
+# dotfiles(CLI の設定）
+
+## 環境
+- macOS
+- starship
+- wezterm
 
 ## dotfilesの作成
 1. Github にこのリポジトリを clone ($HOME にて git clone)
