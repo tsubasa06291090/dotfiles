@@ -2,8 +2,8 @@
 
 ## 環境
 - macOS
-- starship
-- wezterm
+- [starship](https://starship.rs/ja-JP/)
+- [wezterm](https://wezterm.org/index.html)
 
 ## dotfilesの作成
 1. Github にこのリポジトリを clone ($HOME にて git clone)
