@@ -22,7 +22,7 @@ error_symbol = '[❯](bold red)'
 #vimcmd_symbol = '[V](bold green)'
 
 [directory]
-style = "bold cyan"
+style = "bold blue"
 truncation_length = 10
 read_only = '🔒'
 read_only_style = 'red'
