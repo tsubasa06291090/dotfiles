@@ -30,6 +30,7 @@ alias ls='ls -G'
 alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
+
 alias g='git'
 alias gs='git status'
 alias ga='git add'
@@ -37,15 +38,35 @@ alias gc='git commit'
 alias gp='git push'
 alias gl='git log --oneline --graph'
 alias gd='git diff'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../../'
+
 alias vim='nvim'
 alias vi='nvim'
+
 alias mkdir='mkdir -p'
 alias grep='grep --color=auto'
 alias df='df -h'
 alias du='du -h'
+
+alias asw='aerospace list-windows --all \
+	--format "WS:%{workspace} | %{app-name} | %{window-title}"'
+alias aswf='aerospace list-windows --workspace focused \
+	--format "%{app-name} | %{window-title}"'
+function aswa() {
+	echo ""
+	for ws in $(aerospace list-workspaces --all); do
+		local windows=$(aerospace list-windows --workspace "$ws" \
+			--format "%{app-name} | %{window-title}")
+		if [[ -n "$windows" ]]; then
+			print -P "%F{blue}%B--- Ws $ws ---%b%f"
+			echo "$windows"
+			echo ""
+		fi
+	done
+}
 
 # == keybind (emacsモード) ==
 bindkey -e
