@@ -2,9 +2,10 @@
 
 ## 環境
 - macOS
-- [starship](https://starship.rs/ja-JP/)
+- zsh
     - zsh-autosuggestions(homebrew)
-    - zsh-syntax-highlighting(homebrew)
+    - zsh-syntax-highlighting.zsh
+- [starship](https://starship.rs/ja-JP/)
 - [wezterm](https://wezterm.org/index.html)
 - [aerospace](https://github.com/nikitabobko/AeroSpace)
 
