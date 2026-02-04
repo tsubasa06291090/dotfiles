@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 config.automatically_reload_config = true
 config.font_size = 12.0
 config.use_ime = true
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.80
 config.macos_window_background_blur = 10
 
 config.color_schemes = require 'colors'
@@ -39,8 +39,9 @@ wezterm.on('format-tab-title',
 			background = '#2d4f67'
 			foreground = '#dcd7ba'
 		end
-
-		local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+		
+		local index = tab.tab_index + 1
+		local title = "   " .. "[" .. index .. "] " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
 
 		return {
 			{ Background = { Color = background } },
@@ -49,6 +50,9 @@ wezterm.on('format-tab-title',
 		}
 	end
 )
-config.keys = require 'keybinds'
+
+config.keys = require("keybinds").keys
+config.key_tables = require("keybinds").key_table
+config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 2000 }
 
 return config
